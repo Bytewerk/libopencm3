@@ -190,9 +190,11 @@ static int usb_standard_get_descriptor(usbd_device *usbd_dev,
 
 			/* Strings with Language ID differnet from
 			 * USB_LANGID_ENGLISH_US are not supported */
+			/* xor: need to support other (null) language to emulate pcan pro, commenting this out:
 			if (req->wIndex != USB_LANGID_ENGLISH_US) {
 				return USBD_REQ_NOTSUPP;
 			}
+			*/
 
 			/* Ths string is returned as UTF16, hence the
 			 * multiplication
